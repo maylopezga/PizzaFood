@@ -1,0 +1,18 @@
+<%= form_for @pizza do |f|%>
+  <% @pizza.errors.full_messages.each do |message| %>
+    <div>
+      <%= message %>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= label_tag(:name, "Pizza") %><br />
+    <%=f.text_field :name, placeholder: "Escribe el nombre de la pizza", class:"form-control"%>
+  </div>
+  <div class="field">
+    <%= label_tag(:ingredients, "Ingredientes") %><br />
+    <%= f.text_area :ingredients, placeholder: "Escribe los ingredientes de la pizza :) ", style:"height:250px;", class:"form-control"%>
+  </div>
+  <div class="actions field center font-button">
+    <%= f.submit "Publicar", class: "btn let be-red" %>
+  </div>
+<%end%>
