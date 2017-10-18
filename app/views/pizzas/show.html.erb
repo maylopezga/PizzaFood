@@ -1,18 +1,21 @@
 <div class="col-md-8 col-md-offset-2 font-conten">
-  <div class="row center">
-    <h1 class="font-title"> <strong><%= @pizza.name %></strong></h1>
+
+<div class="row center">
+    <h1 class="font-title"> <strong><%= @pizza.name%></strong></h1>
   </div>
   <div class="container">
     <div class="field font-conten", style="text-align: left;">
       <strong>Vota:</strong>
-      <!-- <%= link_to "\m/", @pizza.votes%> -->
-    </div>
+       <%= link_to "Vota !!", edit_vote_path(@pizza.id) %>
+   </div>
+   <strong> Número de votos: </strong>
+   <%= @pizza.votes %>
     <div class="field font-conten", style="text-align: left;">
       <%= @pizza.ingredients%>
     </div>
     <div class="field2">
       <div id="ellink", class="filed font-button center">
-        <%= link_to "Editar", edit_pizzas_path(@pizza), class:"btn be-red" %>
+        <%= link_to "Editar", edit_pizza_path(@pizza), class:"btn be-red" %>
       </div>
     </div>
 

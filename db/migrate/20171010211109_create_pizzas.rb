@@ -3,7 +3,7 @@ class CreatePizzas < ActiveRecord::Migration[5.1]
     create_table :pizzas do |t|
       t.string :name
       t.text :ingredients
-      t.integer :votes
+      t.integer :votes, default: 0
 
       t.timestamps
     end

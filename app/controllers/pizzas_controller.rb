@@ -3,7 +3,10 @@ class PizzasController < ApplicationController
     @pizzas = Pizza.all
   end
   def show
+    puts "Hola_______________________----------"
+    puts params[:pizza]
     @pizza = Pizza.find(params[:id])
+
   end
   def new
     @pizza = Pizza.new
@@ -19,6 +22,18 @@ class PizzasController < ApplicationController
     else
       render :new
     end
+  end
+  def update_vote
+    @pizza = Pizza.find(params[:id])
+    puts @pizza.name
+    cont = params[:votes]
+    puts "Esto__*************************"
+    puts params[:votes]
+    #cont = cont. + 1
+    #@pizza.votes = cont
+
+    puts "Votó"
+    redirect_to pizzas_path
   end
   def destroy
     @pizza = Pizza.find(params[:id])
@@ -36,6 +51,6 @@ class PizzasController < ApplicationController
 
   private
   def pizza_params
-    params.require(:pizza).permit(:name, :ingredients,:votes)
+    params.require(:pizza).permit( :name, :ingredients,:votes)
   end
 end

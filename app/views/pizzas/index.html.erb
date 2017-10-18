@@ -1,11 +1,12 @@
 <div class="col-md-8 col-md-offset-2 font-conten">
+
   <div class="row">
     <h1 class="font-title"> <strong>¡¡Pizzas!!</strong></h1>
   </div>
   <div class="col-md-10 col-md-offset-1">
     <% @pizzas.each do |pizza|%>
       <div class="field center">
-        <h1 class="font-conten"><strong> <%= link_to pizza.name, pizzas_path %> </strong> </h1>
+        <h1 class="font-conten"><strong> <%= link_to pizza.name, pizza %> </strong> </h1>
       </div>
       <div class="field font-conten", style="text-align: left;">
         <%= pizza.ingredients%>
