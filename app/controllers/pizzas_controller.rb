@@ -25,6 +25,10 @@ class PizzasController < ApplicationController
   end
   def update_vote
     @pizza = Pizza.find(params[:id])
+    quantity = @pizza.votes.to_i
+    quantity_new = quantity + 1
+    quantity_final = quantity_new.to_s
+    @pizza.update({votes: quantity_final})
     puts @pizza.name
     cont = params[:votes]
     puts "Esto__*************************"

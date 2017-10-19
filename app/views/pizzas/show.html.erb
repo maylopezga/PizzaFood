@@ -6,7 +6,7 @@
   <div class="container">
     <div class="field font-conten", style="text-align: left;">
       <strong>Vota:</strong>
-       <%= link_to "Vota !!", edit_vote_path(@pizza.id) %>
+       <%= link_to "Vota !!", edit_vote_path(:id => @pizza.id) %>
    </div>
    <strong> Número de votos: </strong>
    <%= @pizza.votes %>
